@@ -9,8 +9,10 @@ namespace Parking.Data.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Address { get; set; }
         public int CountPlace { get; set; }
         public int FreePlace { get; set; }
         public double Price { get; set; }
+        public string ProductType { get; set; }
     }
 }

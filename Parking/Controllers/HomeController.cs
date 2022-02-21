@@ -45,9 +45,10 @@ namespace Parking.Controllers
             Park parking = new Park
             {
                 Name = input.Name,
+                Address = input.Address,
                 CountPlace = input.CountPlace,
-                FreePlace = input.FreePlace,
-                Price = input.Price
+                Price = input.Price,
+                ProductType = input.ProductType
             };
             this.db.Parkings.Add(parking);
             this.db.SaveChanges();

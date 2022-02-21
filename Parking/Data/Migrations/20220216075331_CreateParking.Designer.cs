@@ -10,8 +10,8 @@ using Parking.Data;
 namespace Parking.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220210195130_InicialCreate")]
-    partial class InicialCreate
+    [Migration("20220216075331_CreateParking")]
+    partial class CreateParking
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -228,6 +228,9 @@ namespace Parking.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CountPlace")
                         .HasColumnType("int");
 
@@ -239,6 +242,9 @@ namespace Parking.Data.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<string>("ProductType")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
