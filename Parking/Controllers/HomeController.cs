@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Parking.Data;
-using Parking.Data.Models;
+
+using Models;
 using Parking.Models;
-using System;
-using System.Collections.Generic;
+using Parking.Service;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,11 +16,18 @@ namespace Parking.Controllers
     {
         private readonly ApplicationDbContext db;
         private readonly ILogger<HomeController> _logger;
+        private readonly IParkingService parkingService;
+        private readonly string[] allowedExtensions = new[] { "png", "jpg" };
+        private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly ICategoriesService service;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, IParkingService parkingService, IWebHostEnvironment webHostEnvironment, ICategoriesService service)
         {
             this.db = db;
             _logger = logger;
+            this.parkingService = parkingService;
+            this.webHostEnvironment = webHostEnvironment;
+            this.service = service;
         }
 
         public IActionResult Index()
@@ -31,30 +39,7 @@ namespace Parking.Controllers
         {
             return View();
         }
-        public IActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Create(CreateParkingViewModel input)
-        {
-            if (!ModelState.IsValid)
-            {
-                return this.View(input);
-            }
-            Park parking = new Park
-            {
-                Name = input.Name,
-                Address = input.Address,
-                CountPlace = input.CountPlace,
-                Price = input.Price,
-                ProductType = input.ProductType
-            };
-            this.db.Parkings.Add(parking);
-            this.db.SaveChanges();
-            return Redirect("/");
-        }
-
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Parking.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Parking.Data
+
+namespace Models
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -14,6 +11,9 @@ namespace Parking.Data
         {
             this.Database.Migrate();
         }
-        public DbSet<Park> Parkings { get; set; }
+        public DbSet<CarParking> Parkings { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Image> Images { get; set; }
+        
     }
 }

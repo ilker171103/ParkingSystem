@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Parking.Data.Models
+﻿namespace Parking.Models
 {
-    public class Park
+    public class SingleParkingViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +9,8 @@ namespace Parking.Data.Models
         public int FreePlace { get; set; }
         public double Price { get; set; }
         public string ProductType { get; set; }
+        public string ImageURL { get; set; }
+
+
     }
 }

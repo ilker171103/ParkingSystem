@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Parking.Models
 {
@@ -14,5 +12,7 @@ namespace Parking.Models
         public double Price { get; set; }
         public string ProductType { get; set; }
         public string[] ProductTypes = new[] { "PaidParking", "FreeParking" };
+        public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
+        public IFormFile Image { get; set; }
     }
 }
