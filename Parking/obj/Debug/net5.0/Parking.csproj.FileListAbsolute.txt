@@ -395,3 +395,4 @@ C:\Users\User\source\repos\Parking\Parking\obj\Debug\net5.0\Parking.csproj.Assem
 C:\Users\User\source\repos\Parking\Parking\obj\Debug\net5.0\Razor\Views\Parking\All.cshtml.g.cs
 C:\Users\User\source\repos\Parking\Parking\obj\Debug\net5.0\Razor\Views\Parking\Create.cshtml.g.cs
 C:\Users\User\source\repos\Parking\Parking\obj\Debug\net5.0\Razor\Views\Parking\ById.cshtml.g.cs
+C:\Users\User\source\repos\Parking\Parking\obj\Debug\net5.0\Razor\Views\Price\All.cshtml.g.cs

@@ -44,7 +44,20 @@ namespace Parking.Service
             }).FirstOrDefault();
             return parking;
         }
-
+        public IEnumerable<ParkingPriceViewModel> GetPrice()
+        {
+            var parkings = this.db.Parkings
+                 .Select(x => new ParkingPriceViewModel
+                 {
+                     
+                     Name = x.Name,
+                     Price = x.Price,
+                     Price12h = x.Price12h,
+                     Price24h = x.Price24h
+                    
+                 }).ToList();
+            return parkings;
+        }
 
 
     }

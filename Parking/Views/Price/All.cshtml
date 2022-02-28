@@ -1,0 +1,41 @@
+﻿@model Parking.Models.ParkingAllPriceViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<section class="u-align-center u-clearfix u-section-7" id="carousel_1128">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-1">Pricing Table Template</h2>
+
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            <table class="u-table-entity u-table-entity-1">
+                <colgroup>
+                    <col width="22.7%">
+                    <col width="25.5%">
+                    <col width="26.6%">
+                    <col width="25.2%">
+                </colgroup>
+                <tbody class="u-align-center u-table-body">
+                    <tr style="height: 57px;">
+                        <td class="u-align-left u-first-column u-palette-3-base u-table-cell u-table-cell-1"></td>
+                        <td class="u-palette-3-base u-table-cell u-table-cell-2">За 1 час </td>
+                        <td class="u-palette-3-base u-table-cell u-table-cell-3">За 12 часа</td>
+                        <td class="u-palette-3-base u-table-cell u-table-cell-4">За 24 часа</td>
+                    </tr>
+                    @foreach (var item in Model.Names)
+                    {
+                        <tr style="height: 89px;">
+                            <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Name</td>
+                            <td class="u-table-cell u-table-cell-6">@item.Price</td>
+                            <td class="u-grey-5 u-table-cell u-table-cell-7">@item.Price12h</td>
+                            <td class="u-table-cell u-table-cell-8">@item.Price24h</td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

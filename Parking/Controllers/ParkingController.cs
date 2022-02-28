@@ -48,6 +48,8 @@ namespace Parking.Controllers
                 Address = input.Address,
                 CountPlace = input.CountPlace,
                 Price = input.Price,
+                Price12h = input.Price12h,
+                Price24h = input.Price24h,
                 ProductType = input.ProductType
             };
 
@@ -86,5 +88,10 @@ namespace Parking.Controllers
             var recipeViewModel = this.parkingService.GetById(id);
             return View(recipeViewModel);
         }
+        public IActionResult Price()
+        {
+            return View();
+        }
+
     }
 }

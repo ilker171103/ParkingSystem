@@ -15,6 +15,8 @@ namespace Models
         public int CountPlace { get; set; }
         public int FreePlace { get; set; }
         public double Price { get; set; }
+        public double Price12h { get; set; }
+        public double Price24h { get; set; }
         public string ProductType { get; set; }
         public ICollection<Image> Images { get; set; }
     }
