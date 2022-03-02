@@ -50,7 +50,7 @@ namespace Parking.Controllers
                 Price = input.Price,
                 Price12h = input.Price12h,
                 Price24h = input.Price24h,
-                ProductType = input.ProductType
+                ParkingType = input.ParkingType
             };
 
             var extension = Path.GetExtension(input.Image.FileName).TrimStart('.');
@@ -92,6 +92,9 @@ namespace Parking.Controllers
         {
             return View();
         }
-
+        public IActionResult FreePlaces()
+        {
+            return View();
+        }
     }
 }

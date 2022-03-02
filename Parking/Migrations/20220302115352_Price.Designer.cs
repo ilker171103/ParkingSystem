@@ -10,7 +10,7 @@ using Models;
 namespace Parking.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220228080820_Price")]
+    [Migration("20220302115352_Price")]
     partial class Price
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

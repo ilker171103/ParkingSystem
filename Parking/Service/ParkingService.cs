@@ -38,7 +38,7 @@ namespace Parking.Service
                 Address = x.Address,
                 CountPlace = x.CountPlace,
                 Price = x.Price,
-                ProductType = x.ProductType,
+                ParkingType = x.ParkingType,
                 ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
 
             }).FirstOrDefault();
