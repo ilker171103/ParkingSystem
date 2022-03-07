@@ -7,6 +7,7 @@
                 <div class="single-recipe-layout1">
                     <div class="ctg-name">@Model.ParkingType</div>
                     <h2 class="item-title">@Model.Name</h2>
+                    <h3 class="item-title">@Model.Address</h3>
                     <div class="row mb-4">
                         <div class="col-xl-9 col-12">
                             <ul class="entry-meta">
@@ -43,7 +44,7 @@
                                         </div>
                                         <div class="media-body space-sm">
                                             <div class="feature-title">Цена</div>
-                                            <div class="feature-sub-title">@Model.Price</div>
+                                            <div class="feature-sub-title">@Model.Price лв.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -52,9 +53,12 @@
                                 <div class="feature-wrap">
                                     <div class="media">
                                         <div class="feature-icon">
-                                            <i class="fas fa-users"></i>
+                                            <i class="fas fa-utensils"></i>
                                         </div>
-                                       
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Цена за 12 часа</div>
+                                            <div class="feature-sub-title">@Model.Price12h лв.</div>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -62,9 +66,12 @@
                                 <div class="feature-wrap">
                                     <div class="media">
                                         <div class="feature-icon">
-                                            <i class="far fa-eye"></i>
+                                            <i class="fas fa-utensils"></i>
                                         </div>
-                                      
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Цена за 24 часа</div>
+                                            <div class="feature-sub-title">@Model.Price24h лв.</div>
+                                        </div>
                                     </div>
                                 </div>
                             </li>

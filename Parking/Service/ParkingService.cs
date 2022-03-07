@@ -38,6 +38,8 @@ namespace Parking.Service
                 Address = x.Address,
                 CountPlace = x.CountPlace,
                 Price = x.Price,
+                Price12h = x.Price12h,
+                Price24h = x.Price24h,
                 ParkingType = x.ParkingType,
                 ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
 

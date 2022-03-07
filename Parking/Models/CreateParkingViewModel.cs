@@ -13,7 +13,7 @@ namespace Parking.Models
         public double Price12h { get; set; }
         public double Price24h { get; set; }
         public string ParkingType { get; set; }
-        public string[] ParkingTypes = new[] { "PaidParking", "FreeParking" };
+        public string[] ParkingTypes = new[] { "Платен паркинг", "Безплатен паркинг" };
         public IEnumerable<KeyValuePair<string, string>> CategoriesItems { get; set; }
         public IFormFile Image { get; set; }
     }

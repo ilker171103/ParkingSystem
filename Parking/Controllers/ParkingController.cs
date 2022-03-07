@@ -20,14 +20,15 @@ namespace Parking.Controllers
         private readonly string[] allowedExtensions = new[] { "png", "jpg" };
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ICategoriesService service;
+        private readonly IGetFreePlacesService placeService;
 
-        public ParkingController(ILogger<ParkingController> logger, ApplicationDbContext db, IParkingService parkingService, IWebHostEnvironment webHostEnvironment, ICategoriesService service)
+        public ParkingController(ILogger<ParkingController> logger, ApplicationDbContext db, IParkingService parkingService, IWebHostEnvironment webHostEnvironment, ICategoriesService service, IGetFreePlacesService placeService)
         {
-            this.db = db;
-            
+            this.db = db;           
             this.parkingService = parkingService;
             this.webHostEnvironment = webHostEnvironment;
             this.service = service;
+            this.placeService = placeService;
         }
         public IActionResult Create()
         {
@@ -92,9 +93,16 @@ namespace Parking.Controllers
         {
             return View();
         }
-        public IActionResult FreePlaces()
+        public IActionResult FreePlaces(int id = 1)
         {
-            return View();
+            var viewModel = new FreePlacesAllViewModel 
+            { 
+                PageNumber = id,
+                Places = this.placeService.GetFreePlaces(id, 4)
+            };
+            return this.View(viewModel);
         }
+       
+
     }
 }

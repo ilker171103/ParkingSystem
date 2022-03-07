@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Models;
+using Parking.Data.Models;
 using Parking.Service;
 
 namespace Parking
@@ -27,11 +28,22 @@ namespace Parking
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0;
+                options.Password.RequireNonAlphanumeric = false;
+
+            })
+
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddTransient<IParkingService, ParkingService>();
             services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<IGetFreePlacesService, GetFreePlacesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
