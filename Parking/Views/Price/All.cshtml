@@ -6,7 +6,17 @@
 }
 <section class="u-align-center u-clearfix u-section-7" id="carousel_1128">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-custom-font u-font-montserrat u-text u-text-1">Pricing Table Template</h2>
+        <br />
+        <br />
+        <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
+            <div class="u-container-layout u-valign-top u-container-layout-1">
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-1">
+
+                    <span class="u-text-palette-3-base">Цени</span>
+                </h2>
+
+            </div>
+        </div>
 
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
             <table class="u-table-entity u-table-entity-1">
@@ -24,14 +34,14 @@
                         <td class="u-palette-3-base u-table-cell u-table-cell-4">За 24 часа</td>
                     </tr>
                     @foreach (var item in Model.Names)
-                    {
+                     {
                         <tr style="height: 89px;">
                             <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Name</td>
                             <td class="u-table-cell u-table-cell-6">@item.Price лв</td>
                             <td class="u-grey-5 u-table-cell u-table-cell-7">@item.Price12h лв</td>
                             <td class="u-table-cell u-table-cell-8">@item.Price24h лв</td>
                         </tr>
-                    }
+                     }
 
 
                 </tbody>

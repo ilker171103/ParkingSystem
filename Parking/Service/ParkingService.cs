@@ -1,4 +1,5 @@
 ﻿using Models;
+using MySqlConnector;
 using Parking.Models;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,38 @@ namespace Parking.Service
                     
                  }).ToList();
             return parkings;
+        }
+        public IEnumerable<AppParkingViewModel> GetApp()
+        {
+            List<AppParkingViewModel> app = new List<AppParkingViewModel>();
+            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("SELECT * FROM parkings;", connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        AppParkingViewModel model = new AppParkingViewModel();
+
+                        model.Id = reader["Id"].GetType() != typeof(DBNull) ? (string)reader["Id"] : null;
+                        model.Name = reader["Name"].GetType() != typeof(DBNull) ? (string)reader["Name"] : null;
+                        model.Address = reader["Address"].GetType() != typeof(DBNull) ? (string)reader["Address"] : null;
+                        model.GpsLat = reader["GPS Lat"].GetType() != typeof(DBNull) ? (double)reader["GPS Lat"] : null;
+                        model.GpsLng = reader["GPS Lng"].GetType() != typeof(DBNull) ? (double)reader["GPS Lng"] : null;
+                        model.Total = reader["Total"].GetType() != typeof(DBNull) ? (int)reader["Total"] : null;
+                        model.Free = reader["Free"].GetType() != typeof(DBNull) ? (int)reader["Free"] : null;
+                        model.Type = reader["Type"].GetType() != typeof(DBNull) ? (string)reader["Type"] : null;
+
+                        app.Add(model);
+                    }
+                }
+            }
+
+            return app;
+
+           
         }
 
 

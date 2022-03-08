@@ -843,3 +843,5 @@ C:\Users\User\source\repos\Parking\ParkingSystem\Parking\obj\Debug\net5.0\Razor\
 C:\Users\User\source\repos\Parking\ParkingSystem\Parking\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\User\source\repos\Parking\ParkingSystem\Parking\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\User\source\repos\Parking\ParkingSystem\Parking\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\User\source\repos\Parking\ParkingSystem\Parking\bin\Debug\net5.0\MySqlConnector.dll
+C:\Users\User\source\repos\Parking\ParkingSystem\Parking\obj\Debug\net5.0\Razor\Views\Parking\AppWork.cshtml.g.cs

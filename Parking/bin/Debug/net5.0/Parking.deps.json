@@ -40,6 +40,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.12",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "MySqlConnector": "2.1.8",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1235,6 +1236,17 @@
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "MySqlConnector/2.1.8": {
+        "runtime": {
+          "lib/net5.0/MySqlConnector.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.8.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/MySqlConnector.dll": {}
         }
       },
       "Newtonsoft.Json/11.0.2": {
@@ -4056,6 +4068,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "MySqlConnector/2.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CVJ0w9PbUnBS3lfOII1J15DshAnJgKqkrvKfkTSiUerPjJpSAfv7LJR5aJNnzj+LdFw2grekguVe1kedp6LMyA==",
+      "path": "mysqlconnector/2.1.8",
+      "hashPath": "mysqlconnector.2.1.8.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",

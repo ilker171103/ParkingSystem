@@ -7,6 +7,7 @@ namespace Parking.Service
     {
         public IEnumerable<ParkingInListViewModel> GetAll(int countRecipe, int pageNumber);
         public IEnumerable<ParkingPriceViewModel> GetPrice();
+        public IEnumerable<AppParkingViewModel> GetApp();
         public int GetCount();
         public SingleParkingViewModel GetById(int id);
     }

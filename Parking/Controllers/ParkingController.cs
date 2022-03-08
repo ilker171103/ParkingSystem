@@ -102,7 +102,20 @@ namespace Parking.Controllers
             };
             return this.View(viewModel);
         }
-       
+        public IActionResult AppWork(int id = 1)
+        {
+            
+            var viewModel = new AppParkingAllViewModel
+            {
 
+                Apps = this.parkingService.GetApp()
+
+                //PageNumber = id,
+                //Parkings = this.parkingService.GetAll(id, 12),
+                //ParksPerPage = 12,
+
+            };
+            return this.View(viewModel);
+        }
     }
 }
