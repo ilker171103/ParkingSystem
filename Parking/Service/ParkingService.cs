@@ -21,8 +21,7 @@ namespace Parking.Service
                  .Select(x => new ParkingInListViewModel
                  {
                      Id = x.Id,
-                     Name = x.Name,
-                     
+                     Name = x.Name,                     
                      ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
                  }).ToList();
             return parkings;
@@ -43,23 +42,49 @@ namespace Parking.Service
                 Price24h = x.Price24h,
                 ParkingType = x.ParkingType,
                 ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
-
             }).FirstOrDefault();
             return parking;
         }
         public IEnumerable<ParkingPriceViewModel> GetPrice()
         {
-            var parkings = this.db.Parkings
+            
+            
+           var parkings = this.db.Parkings
                  .Select(x => new ParkingPriceViewModel
                  {
-                     
+                    
                      Name = x.Name,
                      Price = x.Price,
                      Price12h = x.Price12h,
-                     Price24h = x.Price24h
-                    
+                     Price24h = x.Price24h                   
                  }).ToList();
-            return parkings;
+           
+            List<ParkingPriceViewModel> app = new List<ParkingPriceViewModel>();
+            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("SELECT * FROM parkings;", connection))
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ParkingPriceViewModel model = new ParkingPriceViewModel();
+                        
+                        model.Name = reader["Name"].GetType() != typeof(DBNull) ? (string)reader["Name"] : null;
+                        
+                        model.Type = reader["Type"].GetType() != typeof(DBNull) ? (string)reader["Type"] : null;
+                        var a = this.db.Parkings.Select(x => new ParkingPriceViewModel
+                        {
+                            Price12h = x.Price12h
+                        }).ToList();
+                        app.Add(model);
+                    }
+                }
+            }
+
+            return app;
+            
         }
         public IEnumerable<AppParkingViewModel> GetApp()
         {
@@ -93,7 +118,7 @@ namespace Parking.Service
 
            
         }
-
+       
 
     }
 }

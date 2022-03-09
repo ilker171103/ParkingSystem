@@ -11,7 +11,8 @@ namespace Parking.Models
         public double Price { get; set; }
         public double Price12h { get; set; }
         public double Price24h { get; set; }
-        
+        public string Type { get; set; }
+
 
     }
 }

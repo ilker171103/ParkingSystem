@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Models;
+using MySqlConnector;
 using Parking.Models;
 using Parking.Service;
 using System;
@@ -89,10 +90,10 @@ namespace Parking.Controllers
             var recipeViewModel = this.parkingService.GetById(id);
             return View(recipeViewModel);
         }
-        public IActionResult Price()
+        /*public IActionResult Price()
         {
             return View();
-        }
+        }*/
         public IActionResult FreePlaces(int id = 1)
         {
             var viewModel = new FreePlacesAllViewModel 
@@ -117,5 +118,25 @@ namespace Parking.Controllers
             };
             return this.View(viewModel);
         }
+       
+        
+        public IActionResult Delete(string id)
+        {
+          
+            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            {
+                connection.Open();
+
+                using (var command = new MySqlCommand("DELETE FROM parkings WHERE Id = @id;", connection))
+                {
+                    command.Parameters.AddWithValue("Id", id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            return Redirect("/Parking/AppWork");
+        }
+       
+       
     }
 }

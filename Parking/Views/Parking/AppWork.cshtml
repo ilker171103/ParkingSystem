@@ -30,8 +30,8 @@
                     <tr style="height: 57px;">
                         <td class="u-align-left u-first-column u-palette-3-base u-table-cell u-table-cell-1">Име</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-2">Адрес</td>
-                        <td class="u-palette-3-base u-table-cell u-table-cell-3">ГПС отношение</td>
-                        <td class="u-palette-3-base u-table-cell u-table-cell-4">ГПС дължина</td>
+                        <td class="u-palette-3-base u-table-cell u-table-cell-3">Географска ширина</td>
+                        <td class="u-palette-3-base u-table-cell u-table-cell-4">Географска дължина</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-4">Общ брой места</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-4">Свободни</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-4">Тип</td>
@@ -40,13 +40,18 @@
                     {
                 <tr style="height: 89px;">
                     <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Name</td>
-                    <td class="u-table-cell u-table-cell-6">@item.Address </td>
-                    <td class="u-grey-5 u-table-cell u-table-cell-7">@item.GpsLat </td>
-                    <td class="u-table-cell u-table-cell-8">@item.GpsLng</td>
-                    <td class="u-table-cell u-table-cell-6">@item.Total </td>
-                    <td class="u-table-cell u-table-cell-8">@item.Free </td>
-                    <td class="u-table-cell u-table-cell-8">@item.Type</td>
-
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Address </td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.GpsLat </td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.GpsLng</td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Total </td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Free </td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Type</td>
+                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">
+                        <a href="/Parking/Delete/@item.Id">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                        </a>
+                    </td>
+                    
                 </tr>
                     }
 
