@@ -4,6 +4,7 @@ using Parking.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Parking.Service
 {
@@ -21,11 +22,24 @@ namespace Parking.Service
                  .Select(x => new ParkingInListViewModel
                  {
                      Id = x.Id,
-                     Name = x.Name,                     
+                     Name = x.Name,
                      ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
                  }).ToList();
             return parkings;
         }
+
+        //public IEnumerable<ParkingInListViewModel> GetAll(int name)
+        //{
+        //    var parkings = this.db.Parkings.Skip((id - 1) * items).Take(items)
+        //         .Select(x => new ParkingInListViewModel
+        //         {
+        //             Id = x.Id,
+        //             Name = x.Name,
+        //             ImageURL = "/img/" + x.Images.FirstOrDefault().Id + "." + x.Images.FirstOrDefault().Extension
+        //         }).ToList();
+        //    return parkings;
+        //}
+
         public int GetCount()
         {
             return db.Parkings.Count();
@@ -48,16 +62,7 @@ namespace Parking.Service
         public IEnumerable<ParkingPriceViewModel> GetPrice()
         {
             
-            
-           var parkings = this.db.Parkings
-                 .Select(x => new ParkingPriceViewModel
-                 {
-                    
-                     Name = x.Name,
-                     Price = x.Price,
-                     Price12h = x.Price12h,
-                     Price24h = x.Price24h                   
-                 }).ToList();
+           
            
             List<ParkingPriceViewModel> app = new List<ParkingPriceViewModel>();
             using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
@@ -71,20 +76,47 @@ namespace Parking.Service
                     {
                         ParkingPriceViewModel model = new ParkingPriceViewModel();
                         
+                        model.Id = reader["Id"].GetType() != typeof(DBNull) ? (string)reader["Id"] : null;
                         model.Name = reader["Name"].GetType() != typeof(DBNull) ? (string)reader["Name"] : null;
-                        
                         model.Type = reader["Type"].GetType() != typeof(DBNull) ? (string)reader["Type"] : null;
-                        var a = this.db.Parkings.Select(x => new ParkingPriceViewModel
+                        double pricePerHour = -1;
+                        if (model.Type != null && model.Type != "free")
                         {
-                            Price12h = x.Price12h
-                        }).ToList();
+                            Regex regex = new Regex(@"paid ((?:\d+.\d+)|(?:\d+))");
+                            Match match = regex.Match(model.Type);
+                            pricePerHour = double.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
+                        }
+                        else
+                        {
+                            model.Type = "Free";
+                        }
+
+                        if (pricePerHour != -1)
+                        {
+                            model.Price12h = pricePerHour * 12;
+                            model.Price24h = pricePerHour * 24;
+                        }
+                        /*
+                        CarParking carParking = new CarParking();
+                        carParking.Name = model.Id; // using name as id
+                        carParking.Price12h = model.Price12h;
+                        carParking.Price24h = model.Price24h;
+
+                        var parking = db.Parkings.FirstOrDefault(d => d.Name == model.Id);
+                        if (parking == null)
+                        {
+                            this.db.Parkings.Add(carParking);
+                        }
+                        else
+                        {
+                            parking = carParking;
+                        }
+                        this.db.SaveChanges();*/
                         app.Add(model);
                     }
                 }
             }
-
             return app;
-            
         }
         public IEnumerable<AppParkingViewModel> GetApp()
         {

@@ -33,18 +33,18 @@ namespace Parking.Controllers
         }
         public IActionResult Create()
         {
-            var viewModel = new CreateParkingViewModel();
-            viewModel.CategoriesItems = this.service.GetCategories();
-            return View();
+             var viewModel = new CreateParkingViewModel();
+             viewModel.CategoriesItems = this.service.GetCategories();             
+             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Create(CreateParkingViewModel input)
         {
             if (!ModelState.IsValid)
-            {
-                return this.View(input);
-            }
-            CarParking parking = new CarParking
+             {
+                 return this.View(input);
+             }
+            /*CarParking parking = new CarParking
             {
                 Name = input.Name,
                 Address = input.Address,
@@ -71,8 +71,27 @@ namespace Parking.Controllers
             parking.Images.Add(dbImage);
             this.db.Parkings.Add(parking);
             this.db.SaveChanges();
+            */
+            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            {
+                connection.Open();
 
+                using (var command = new MySqlCommand("INSERT INTO parkings VALUES (@Id, @Name, @Address, @GPSLat, @GPSLng, @Total, @Free, @Type);", connection))
+                {
+                    command.Parameters.AddWithValue("Id", input.Id);
+                    command.Parameters.AddWithValue("Name", input.Id);
+                    command.Parameters.AddWithValue("Address", input.Id);
+                    command.Parameters.AddWithValue("GPSLat", input.Id);
+                    command.Parameters.AddWithValue("GPSLng", input.Id);
+                    command.Parameters.AddWithValue("Total", input.Id);
+                    command.Parameters.AddWithValue("Free", input.Id);
+                    command.Parameters.AddWithValue("Type", input.Id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
             return Redirect("/");
+            
         }
         public IActionResult All(int id = 1)
         {

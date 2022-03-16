@@ -36,10 +36,13 @@ namespace Parking
                 options.Password.RequiredLength = 6;
                 options.Password.RequiredUniqueChars = 0;
                 options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireLowercase = false;
 
             })
-
+                .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+               
+            
             services.AddControllersWithViews();
             services.AddTransient<IParkingService, ParkingService>();
             services.AddTransient<ICategoriesService, CategoriesService>();

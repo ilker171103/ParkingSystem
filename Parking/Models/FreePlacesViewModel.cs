@@ -10,5 +10,7 @@ namespace Parking.Models
         public string Name { get; set; }
         public int CountPlace { get; set; }
         public int FreePlace { get; set; }
+        public int? Total { get; set; }
+        public int? Free { get; set; }
     }
 }

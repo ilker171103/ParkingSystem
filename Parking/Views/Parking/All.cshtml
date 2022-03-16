@@ -18,9 +18,10 @@
 <hr />
 <div class="row">
     @foreach (var item in Model.Parkings)
-    {
+    { // @($"/img/{item.Id}.png")
+      // "@item.ImageURL"
         <div class="media col-md-3">
-            <img class="mr-3" width="100" src="@item.ImageURL" alt="ImgHere">
+            <img class="mr-3" width="100" src=@($"/img/{item.Id}.jpg") alt="ImgHere">
             <div class="media-body">
                 <h5 class="mt-0"><a asp-action="ById" asp-route-id="@item.Id">@item.Name</a></h5>
                 @item.CategoryName

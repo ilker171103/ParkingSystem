@@ -64,7 +64,6 @@ namespace Parking.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
-
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
@@ -84,7 +83,13 @@ namespace Parking.Areas.Identity.Pages.Account
                     FirstName = Input.FirstName,
                     LastName = Input.LastName
                 };
+                // if (_userManager.Users.Count() == 0)
+                //    await _userManager.AddToRoleAsync(user, "Admin");
+                //else
+                //    await _userManager.AddToRoleAsync(user, "User");
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
+                await _userManager.AddToRoleAsync(user, "Admin");
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
