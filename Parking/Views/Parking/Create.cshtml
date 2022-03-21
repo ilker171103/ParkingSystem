@@ -52,7 +52,7 @@
                 @foreach (var item in str)
                 {
                     <div class="form-check form-check-inline" id="Price">
-                        <input id="radioButtons" type="radio" class="form-check-input" asp-for="Type" value="@item" onclick="(ShowPrice(@item)" />
+                        <input id="radioButtons" type="radio" class="form-check-input" asp-for="Type" value="@item" onclick="ShowPrice(@item)" />
                         <label class="form-check-label" asp-for="@item">@item</label>
                     </div>
 

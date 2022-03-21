@@ -72,7 +72,7 @@ namespace Parking.Controllers
             this.db.Parkings.Add(parking);
             this.db.SaveChanges();
             */
-            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            using (var connection = new MySqlConnection("Server=localhost;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
             {
                 connection.Open();
 
@@ -104,7 +104,7 @@ namespace Parking.Controllers
             };
             return this.View(viewModel);
         }
-        public IActionResult ById(int id = 1)
+        public IActionResult ById(string id)
         {
             var recipeViewModel = this.parkingService.GetById(id);
             return View(recipeViewModel);
@@ -142,7 +142,7 @@ namespace Parking.Controllers
         public IActionResult Delete(string id)
         {
           
-            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            using (var connection = new MySqlConnection("Server=localhost;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
             {
                 connection.Open();
 

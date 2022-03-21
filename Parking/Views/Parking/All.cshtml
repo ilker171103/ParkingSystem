@@ -20,8 +20,8 @@
     @foreach (var item in Model.Parkings)
     { // @($"/img/{item.Id}.png")
       // "@item.ImageURL"
-        <div class="media col-md-3">
-            <img class="mr-3" width="100" src=@($"/img/{item.Id}.jpg") alt="ImgHere">
+        <div class="media col-md-3 col-xs-12 col-sm-6 ">
+            <img class="mr-3" width="100" src=@($"/img/{item.Id}.png") alt="ImgHere">
             <div class="media-body">
                 <h5 class="mt-0"><a asp-action="ById" asp-route-id="@item.Id">@item.Name</a></h5>
                 @item.CategoryName

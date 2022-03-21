@@ -27,7 +27,7 @@ namespace Parking.Service
                 }).ToList();
             return parkings;*/
             List<FreePlacesViewModel> app = new List<FreePlacesViewModel>();
-            using (var connection = new MySqlConnection("Server=pyrolands.ddns.net;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
+            using (var connection = new MySqlConnection("Server=localhost;Database=parkingdb;Uid=Frontend;Pwd=aUqFec6veCD2eWwWbUrK74anN6mVfkXu;"))
             {
                 connection.Open();
 

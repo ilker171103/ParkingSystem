@@ -10,7 +10,9 @@ namespace Parking.Models
         public AppParkingAllViewModel()
         {
             this.Apps = new HashSet<AppParkingViewModel>();
+           
         }
         public IEnumerable<AppParkingViewModel> Apps { get; set; }
+       
     }
 }
