@@ -28,20 +28,35 @@
                 </colgroup>
                 <tbody class="u-align-center u-table-body">
                     <tr style="height: 57px;">
-                        <td class="u-align-left u-first-column u-palette-3-base u-table-cell u-table-cell-1"></td>
+                        <td class="u-align-left u-first-column u-palette-3-base u-table-cell u-table-cell-1">Име на паркинг</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-2">За 1 час </td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-3">За 12 часа</td>
                         <td class="u-palette-3-base u-table-cell u-table-cell-4">За 24 часа</td>
                     </tr>
                     @foreach (var item in Model.Names)
-                     {
+                    {
                         <tr style="height: 89px;">
                             <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Name</td>
-                            <td class="u-table-cell u-table-cell-6">@item.Type лв</td>
-                            <td class="u-grey-5 u-table-cell u-table-cell-7">@item.Price12h лв</td>
-                            <td class="u-table-cell u-table-cell-8">@item.Price24h лв</td>
+                            <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Type</td>
+                            @if (item.Price12h == 0.0)
+                            {
+                                <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">БЕЗПЛАТЕН</td>
+                            }
+                            else
+                            {
+                                <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Price12h лв</td>
+                            }
+                            @if (item.Price12h == 0.0)
+                            {
+                                <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">БЕЗПЛАТЕН</td>
+                            }
+                            else
+                            {
+                                <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Price24h лв</td>
+                            }
+
                         </tr>
-                     }
+                    }
 
 
                 </tbody>

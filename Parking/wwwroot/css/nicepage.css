@@ -36407,9 +36407,8 @@ html {
  /*end-variables base-font-size*/
 #stylebyid {
     margin: 0 auto;
-    background-color: blue;
+    background-color: #ff91a4;
     width: 80%;
-    
 }
 .item-figure img{
     width: 100%;

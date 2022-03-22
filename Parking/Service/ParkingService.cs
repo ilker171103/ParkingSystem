@@ -139,22 +139,26 @@ namespace Parking.Service
                         model.Name = reader["Name"].GetType() != typeof(DBNull) ? (string)reader["Name"] : null;
                         model.Type = reader["Type"].GetType() != typeof(DBNull) ? (string)reader["Type"] : null;
                         double pricePerHour = -1;
+                        
                         if (model.Type != null && model.Type != "free")
                         {
                             Regex regex = new Regex(@"paid ((?:\d+.\d+)|(?:\d+))");
                             Match match = regex.Match(model.Type);
                             pricePerHour = double.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
-                        }
-                        else
-                        {
-                            model.Type = "Free";
+                            model.Type = $"{pricePerHour} лв";
                         }
 
+                        else
+                        {
+                            model.Type = "Безплатен";   
+                        }
+                     
                         if (pricePerHour != -1)
                         {
                             model.Price12h = pricePerHour * 12;
                             model.Price24h = pricePerHour * 24;
                         }
+                      
                         /*
                         CarParking carParking = new CarParking();
                         carParking.Name = model.Id; // using name as id
