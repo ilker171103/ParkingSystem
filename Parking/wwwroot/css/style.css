@@ -6120,10 +6120,12 @@ ul {
 	color: #ff4a52;
 	font-weight: 600;
 	margin-bottom: 5px;
+	margin-left: 490px;
 }
 
 .single-recipe-layout1 .item-title {
 	font-weight: 700;
+	margin-left: 460px;
 }
 
 .single-recipe-layout1 .entry-meta {
@@ -6378,8 +6380,8 @@ ul {
 }
 
 .single-recipe-layout1 .item-feature ul {
-	margin-left: -1px;
-	margin-right: -1px;
+	margin-left: 170px;
+	margin-right: -170px;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -11844,4 +11846,15 @@ footer.ranna-bg-dark {
 
 .footer-menu ul li:last-child:after {
 	display: none;
+}
+#FreeRow{
+	margin-left: -75px;
+	margin-right: -75px;
+}
+#register1{
+	margin-top: 50px;
+}
+#Map{
+	margin-left: 170px;
+	margin-right: -170px;
 }

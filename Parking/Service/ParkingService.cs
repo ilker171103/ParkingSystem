@@ -147,7 +147,6 @@ namespace Parking.Service
                             pricePerHour = double.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
                             model.Type = $"{pricePerHour} лв";
                         }
-
                         else
                         {
                             model.Type = "Безплатен";   
@@ -206,6 +205,19 @@ namespace Parking.Service
                         if (model.Free < 0)
                         {
                             model.Free = 0;
+                        }
+                        double pricePerHour = -1;
+
+                        if (model.Type != null && model.Type != "free")
+                        {
+                            Regex regex = new Regex(@"paid ((?:\d+.\d+)|(?:\d+))");
+                            Match match = regex.Match(model.Type);
+                            pricePerHour = double.Parse(match.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
+                            model.Type = $"{pricePerHour} лв";
+                        }
+                        else
+                        {
+                            model.Type = "Безплатен";
                         }
                         app.Add(model);
                     }

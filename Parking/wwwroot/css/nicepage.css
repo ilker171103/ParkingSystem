@@ -2906,7 +2906,16 @@ blockquote.u-text.u-indent-76 {
 .u-spacing-75.u-icon,
 .u-spacing-75.u-search-icon,
 .u-spacing-75.u-gallery-nav,
-.u-spacing-75.u-carousel-control {
+.u-spacing
+
+
+
+
+
+
+
+
+.u-carousel-control {
   padding: 75px;
 }
 blockquote.u-text.u-indent-75 {
@@ -36412,4 +36421,5 @@ html {
 }
 .item-figure img{
     width: 100%;
+    margin-left: 170px;
 }
