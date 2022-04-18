@@ -6119,14 +6119,16 @@ ul {
 .single-recipe-layout1 .ctg-name {
 	color: #ff4a52;
 	font-weight: 600;
+	margin-top: 20px;
 	margin-bottom: 5px;
-	margin-left: 490px;
+	text-align: center;
 }
 
-.single-recipe-layout1 .item-title {
-	font-weight: 700;
-	margin-left: 460px;
-}
+	.single-recipe-layout1 .item-title {
+		font-weight: 700;
+		margin-bottom: 5px;
+		text-align: center;
+	}
 
 .single-recipe-layout1 .entry-meta {
 	margin-bottom: 5px;
@@ -6380,8 +6382,8 @@ ul {
 }
 
 .single-recipe-layout1 .item-feature ul {
-	margin-left: 170px;
-	margin-right: -170px;
+	margin-left: -16px;
+	margin-right: -277px;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -11855,6 +11857,9 @@ footer.ranna-bg-dark {
 	margin-top: 50px;
 }
 #Map{
-	margin-left: 170px;
-	margin-right: -170px;
+	margin-left: -15px;
+	
+}
+#InfoById{
+	text-align: center;
 }

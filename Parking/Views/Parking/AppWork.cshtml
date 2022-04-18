@@ -46,12 +46,18 @@
                     <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Total </td>
                     <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Free </td>
                     <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">@item.Type</td>
-                    <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">
-                        <a href="/Parking/Delete/@item.Id">
-                        <input type="submit" value="Delete" class="btn btn-danger" />
-                        </a>
-                    </td>
-                    
+                    @{
+                        if (this.User.IsInRole("Admin"))
+                        {
+                            <td class="u-align-left u-first-column u-grey-5 u-table-cell u-table-cell-5">
+                                <a href="/Parking/Delete/@item.Id">
+                                    <input type="submit" value="Delete" class="btn btn-danger" />
+                                </a>
+                            </td>
+                        }
+                    }
+
+
                 </tr>
                     }
 

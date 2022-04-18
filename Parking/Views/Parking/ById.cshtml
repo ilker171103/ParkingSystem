@@ -1,119 +1,118 @@
 ﻿@model Parking.Models.SingleParkingViewModel
 
-<section class="single-recipe-wrap-layout1 padding-top-74 padding-bottom-50">
+<section class="u-clearfix u-image u-section-1 padding-top-74 padding-bottom-50" id="ByIdBack">
     <div class="container" id="stylebyid">
         <div class="row gutters-60">
             <div class="col-lg-8">
                 <div class="single-recipe-layout1">
-                  
-                        <div class="ctg-name">@Model.ParkingType</div>
-                        <h2 class="item-title">@Model.Name</h2>
-                        <h3 class="item-title">@Model.Address</h3>
+                    <div class="ctg-name">@Model.ParkingType</div>
+                    <h2 class="item-title">@Model.Name</h2>
+                    <h3 class="item-title">@Model.Address</h3>
 
-                        <div class="row mb-4">
-                            <div class="col-xl-9 col-12">
-                                <ul class="entry-meta">
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="item-figure">
-                            <img src="@Model.ImageURL" alt="Product">
-                        </div>
-                        <div class="item-feature">
-                            <ul>
-                                <li>
-                                    <div class="feature-wrap">
-                                        <div class="media">
-                                            <div class="feature-icon">
-                                                <i class="far fa-clock"></i>
-                                            </div>
-                                            <div class="media-body space-sm">
-                                                <div class="feature-title">Брой места</div>
-                                                <div class="feature-sub-title">@Model.CountPlace</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="feature-wrap">
-                                        <div class="media">
-                                            <div class="feature-icon">
-                                                <i class="fas fa-utensils"></i>
-                                            </div>
-                                            <div class="media-body space-sm">
-                                                <div class="feature-title">Цена</div>
-                                                <div class="feature-sub-title">@Model.Price лв.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="feature-wrap">
-                                        <div class="media">
-                                            <div class="feature-icon">
-                                                <i class="fas fa-utensils"></i>
-                                            </div>
-                                            <div class="media-body space-sm">
-                                                <div class="feature-title">Цена за 12 часа</div>
-                                                <div class="feature-sub-title">@Model.Price12h лв.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="feature-wrap">
-                                        <div class="media">
-                                            <div class="feature-icon">
-                                                <i class="fas fa-utensils"></i>
-                                            </div>
-                                            <div class="media-body space-sm">
-                                                <div class="feature-title">Цена за 24 часа</div>
-                                                <div class="feature-sub-title">@Model.Price24h лв.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                    <div class="row mb-4">
+                        <div class="col-xl-9 col-12">
+                            <ul class="entry-meta">
                             </ul>
-                            @if (Model.Name == "Kaspi4an")
-                            {
-                                <div style="border:1px solid red; display:inline-block;" id="Map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4178.7080824831!2d27.157151042865493!3d43.31549481210608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58fe956315923%3A0xb0bea74db3020f71!2z0J7QkdCp0JjQndCQINCa0JDQodCf0JjQp9CQ0J0!5e1!3m2!1sbg!2sbg!4v1648455557312!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                </div>
-                            }
-                            @if (Model.Name == "Jembelev")
-                            {
-                                <div style="border:1px solid red; display:inline-block;" id="Map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.5988783281035!2d26.927939946354304!3d43.272240658189695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5e60b552dd%3A0x50d7b296191229ab!2z0J_Qu9Cw0YLQtdC9INC_0LDRgNC60LjQvdCz!5e1!3m2!1sbg!2sbg!4v1648455696798!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                </div>
-                            }
-                            @if (Model.Name == "RUSENSKIQ DGD")
-                            {
-                                <div style="border:1px solid red; display:inline-block;" id="Map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5156.238437399007!2d25.95669553452744!3d43.845920843658256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ae60c6478083b9%3A0x4b688e33bf76bda5!2z0J_Qu9Cw0YLQtdC9INC_0LDRgNC60LjQvdCz!5e1!3m2!1sbg!2sbg!4v1648455922412!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                </div>
-                            }
-                            @if (Model.Name == "Kristal MDF")
-                            {
-                                <div style="border:1px solid red; display:inline-block;" id="Map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d673.0085775285906!2d26.930171085200037!3d43.270975328933524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5ed3802581%3A0x5cee0d4ea1869e27!2z0J_QsNGA0LrQuNC90LM!5e1!3m2!1sbg!2sbg!4v1648456412180!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-                                </div>
-                            }
                         </div>
-                    
+
+                    </div>
+                    <div class="item-figure">
+                        <img src="@Model.ImageURL" alt="Product">
+                    </div>
+                    <div class="item-feature">
+                        <ul>
+                            <li>
+                                <div class="feature-wrap">
+                                    <div class="media">
+                                        <div class="feature-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Брой места</div>
+                                            <div class="feature-sub-title">@Model.CountPlace</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-wrap">
+                                    <div class="media">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Цена</div>
+                                            <div class="feature-sub-title">@Model.Price лв.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-wrap">
+                                    <div class="media">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Цена за 12 часа</div>
+                                            <div class="feature-sub-title">@Model.Price12h лв.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-wrap">
+                                    <div class="media">
+                                        <div class="feature-icon">
+                                            <i class="fas fa-utensils"></i>
+                                        </div>
+                                        <div class="media-body space-sm">
+                                            <div class="feature-title">Цена за 24 часа</div>
+                                            <div class="feature-sub-title">@Model.Price24h лв.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        @if (Model.Name == "Каспичан")
+                        {
+                            <div style="border:1px solid red; display:inline-block;" id="Map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4178.7080824831!2d27.157151042865493!3d43.31549481210608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58fe956315923%3A0xb0bea74db3020f71!2z0J7QkdCp0JjQndCQINCa0JDQodCf0JjQp9CQ0J0!5e1!3m2!1sbg!2sbg!4v1648455557312!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                            </div>
+                        }
+                        @if (Model.Name == "Градинки")
+                        {
+                            <div style="border:1px solid red; display:inline-block;" id="Map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.5988783281035!2d26.927939946354304!3d43.272240658189695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5e60b552dd%3A0x50d7b296191229ab!2z0J_Qu9Cw0YLQtdC9INC_0LDRgNC60LjQvdCz!5e1!3m2!1sbg!2sbg!4v1648455696798!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                            </div>
+                        }
+                        @if (Model.Name == "Университета")
+                        {
+                            <div style="border:1px solid red; display:inline-block;" id="Map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5156.238437399007!2d25.95669553452744!3d43.845920843658256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ae60c6478083b9%3A0x4b688e33bf76bda5!2z0J_Qu9Cw0YLQtdC9INC_0LDRgNC60LjQvdCz!5e1!3m2!1sbg!2sbg!4v1648455922412!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                            </div>
+                        }
+                        @if (Model.Name == "Кристал")
+                        {
+                            <div style="border:1px solid red; display:inline-block;" id="Map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d673.0085775285906!2d26.930171085200037!3d43.270975328933524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5ed3802581%3A0x5cee0d4ea1869e27!2z0J_QsNGA0LrQuNC90LM!5e1!3m2!1sbg!2sbg!4v1648456412180!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648198776187!5m2!1sbg!2sbg" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.0952991082654!2d26.925292645630893!3d43.27037926717919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a58a5f1250c3df%3A0x3c1d316ea87befb2!2z0LHRg9C7LiDigJ7QodC70LDQstGP0L3RgdC60LjigJwgMTUsIDk3MDMg0KjRg9C80LXQvSDQptC10L3RgtGK0YAsINCo0YPQvNC10L0!5e0!3m2!1sbg!2sbg!4v1648199075490!5m2!1sbg!2sbg" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+                            </div>
+                        }
+                    </div>
+
 
                     <div class="making-elements-wrap">
                         <div class="row">
                             <div class="col-xl-6 col-12">
-                                
+
                             </div>
 
                         </div>

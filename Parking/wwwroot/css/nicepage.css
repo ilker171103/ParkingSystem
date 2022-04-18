@@ -36417,9 +36417,9 @@ html {
 #stylebyid {
     margin: 0 auto;
     background-color: #ff91a4;
-    width: 80%;
+    width: 50%;
 }
 .item-figure img{
     width: 100%;
-    margin-left: 170px;
+    margin-left: 130px;
 }

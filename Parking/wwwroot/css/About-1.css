@@ -2,7 +2,10 @@
     background-image: url("/images/dfggg-min.jpg");
     background-position: 50% 50%;
 }
-
+#ByIdBack {
+    background-image: url("/images/parks.jpg");
+    background-position: 50% 50%;
+}
 .u-section-1 .u-sheet-1 {
   min-height: 753px;
 }
